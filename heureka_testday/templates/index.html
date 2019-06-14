@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="grid-item">
+    <!-- Výpis kategorií z JSONu-->
+    {% for category in jsondict %}
+    <a href="{% url 'section' category.categoryId %}">{{ category.title }}</a>
+    {% endfor %}
+</div>
+{% endblock content %}

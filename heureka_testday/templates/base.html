@@ -1,0 +1,22 @@
+{% load staticfiles %}
+
+<!-- základ pro web -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="base">
+        <div class="side-nav">
+            <!-- Výpis kategorií z JSONu-->
+            {%for category in jsondict%}
+            <a href="{% url 'section' category.categoryId %}">{{ category.title }}</a>
+            {% endfor %}
+        </div>
+
+    {% block content %}
+    {% endblock content %}
+
+    </div>
+</body>

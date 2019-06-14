@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="grid-item">
+        {%for product in jsondictp%}
+        <a href="">{{ product.title }}</a><span>{{ product.min_price }} -- {{ product.max_price }}</span>
+        {% if product.img_url|length > 0 %}
+            <img src="{{ product.img_url }}">
+        {% endif %}
+        <br>
+        {% endfor %}
+</div>
+{% endblock content %}
